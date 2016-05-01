@@ -82,8 +82,12 @@ hr{
     font-weight: bold;
 }
 
-.fixture{
+.fixture>a{
+    color: #565657;
+}
 
+.fixture>a:hover{
+    color: #008091;
 }
 
 .championship figure {
@@ -118,13 +122,19 @@ hr{
 	}
 }
 
+.rowArticle{
+    min-height: 200px;
+}
+
 .imgArticle{
     float: left;
     width: 25%;
+    min-height: 200px;
 }
 
 .imgArticle>img{
-    width: 100%;
+    width: 90%;
+    margin: 3%;
 }
 
 .textArticle{

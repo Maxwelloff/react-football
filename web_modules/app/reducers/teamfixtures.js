@@ -10,8 +10,8 @@ const initialState = {
 }
 
 const format = (data) => {
-    const {teamfixtures} = data
-    let result = {teamfixtures}
+    const {fixtures} = data
+    let result = {fixtures}
     return result
 }
 

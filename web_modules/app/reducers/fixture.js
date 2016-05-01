@@ -1,16 +1,18 @@
 import fetchJSON from "app/fetchJSON"
 import consts from "app/consts"
 
-export const GET = "molotov/artists/GET"
-export const SET = "molotov/artists/SET"
-export const ERROR = "molotov/artists/ERROR"
+export const GET = "molotov/fixture/GET"
+export const SET = "molotov/fixture/SET"
+export const ERROR = "molotov/fixture/ERROR"
 
 const initialState = {
-
+  loading:true
 }
 
 const format = (data) => {
-    return {results:data.items}
+    const {fixture, head2head} = data
+    let result = {fixture,head2head}
+    return result
 }
 
 // redux reducer
@@ -24,7 +26,7 @@ export default function reducer(state = initialState, action) {
 
     case SET:
         return {
-            ...format(action.response.artists)
+            ...format(action.response)
         }
 
     case ERROR:
@@ -44,7 +46,7 @@ export default function reducer(state = initialState, action) {
 }
 
 // redux actions
-export function get(name) {
+export function get(id) {
     return {
         types: [
             GET,
@@ -52,7 +54,7 @@ export function get(name) {
             ERROR,
         ],
         promise: (
-            fetchJSON(consts.api.enpoints.getSearch(name,"artist"), {
+            fetchJSON(consts.api.enpoints.getFixture(id), {
                 method: "GET"
             })
         )

@@ -93,15 +93,19 @@ export default class PageChampionship extends Component {
             <div className={styles.live}>
                 <h3 className={styles.titleClassement}>Résultats</h3>
                 <hr/>
+
                 {
                     fixtures &&
                     fixtures.fixtures &&
                     fixtures.fixtures.map((fixture, index) => {
-                        if(fixture.result.goalsHomeTeam!==null && fixture.result.goalsAwayTeam!==null){
+                        fixture.id = fixture._links.self.href.substr(41);
+                        if(fixture.status=="FINISHED" ){
                             return <div key={index} className={styles.fixture} >
-                                        <div className={styles.homeTeams}>{fixture.homeTeamName}</div>
-                                        <div className={styles.scores}>{fixture.result.goalsHomeTeam} - {fixture.result.goalsAwayTeam}</div>
-                                        <div className={styles.awayTeams}> {fixture.awayTeamName}</div>
+                                        <Link to={"/fixtures/"+fixture.id}>
+                                            <div className={styles.homeTeams}>{fixture.homeTeamName}</div>
+                                            <div className={styles.scores}>{fixture.result.goalsHomeTeam} - {fixture.result.goalsAwayTeam}</div>
+                                            <div className={styles.awayTeams}> {fixture.awayTeamName}</div>
+                                        </Link>
                                     </div>
                         }
                     })

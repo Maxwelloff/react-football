@@ -10,11 +10,10 @@ const store = createStore(combineReducers(reducers))
 
 import App from "./App"
 import PageHome from "PageHome"
-import PageArtist from "PageArtist"
-import PageDiscover from "PageDiscover"
 import PageNotFound from "PageNotFound"
 import PageChampionship from "PageChampionship"
 import PageTeam from "PageTeam"
+import PageFixture from "PageFixture"
 
 import DevTools from "app/redux/createDevTools"
 
@@ -33,10 +32,9 @@ export default class Routes extends Component {
        <Provider store={ store }>
           <Router history={browserHistory}>
             <Route path="/" component={App}>
-                <Route path="artist/:artistId" component={PageArtist}/>
-                <Route path="discover" component={PageDiscover}/>
                 <Route path="championship/:championshipId" component={PageChampionship}/>
                 <Route path="teams/:teamId" component={PageTeam}/>
+                <Route path="fixtures/:fixtureId" component={PageFixture}/>
                 <IndexRoute component={PageHome} />
             </Route>
             <Route path="*" component={PageNotFound}/>

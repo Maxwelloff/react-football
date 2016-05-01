@@ -48,6 +48,14 @@ ul{
     font-size: 1.5em;
 }
 
+.fixture>a{
+    color: #565657;
+}
+
+.fixture>a:hover{
+    color: #008091;    
+}
+
 hr{
     width: 95%;
     margin: 0 auto;

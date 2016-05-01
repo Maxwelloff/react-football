@@ -96,17 +96,22 @@ export default class PageHome extends Component {
                     fixtures &&
                     fixtures.fixtures &&
                     fixtures.fixtures.map((fixture, index) => {
+                        fixture.id = fixture._links.self.href.substr(41);
                         if(fixture.result.goalsHomeTeam!==null || fixture.result.goalsAwayTeam!==null){
                             return <div key={index} className={styles.fixture} >
-                                        <div className={styles.homeTeams}>{fixture.homeTeamName}</div>
-                                        <div className={styles.scores}>{fixture.result.goalsHomeTeam} - {fixture.result.goalsAwayTeam}</div>
-                                        <div className={styles.awayTeams}> {fixture.awayTeamName}</div>
+                                        <Link to={"/fixtures/"+fixture.id}>
+                                            <div className={styles.homeTeams}>{fixture.homeTeamName}</div>
+                                            <div className={styles.scores}>{fixture.result.goalsHomeTeam} - {fixture.result.goalsAwayTeam}</div>
+                                            <div className={styles.awayTeams}> {fixture.awayTeamName}</div>
+                                        </Link>
                                     </div>
                         }else{
                             return <div key={index} className={styles.fixture} >
-                                        <div className={styles.homeTeams}>{fixture.homeTeamName}</div>
-                                        <div className={styles.scores}>{fixture.result.goalsHomeTeam} - {fixture.result.goalsAwayTeam}</div>
-                                        <div className={styles.awayTeams}> {fixture.awayTeamName}</div>
+                                        <Link to={"/fixtures/"+fixture.id}>
+                                            <div className={styles.homeTeams}>{fixture.homeTeamName}</div>
+                                            <div className={styles.scores}>À venir </div>
+                                            <div className={styles.awayTeams}> {fixture.awayTeamName}</div>
+                                        </Link>
                                     </div>
                         }
 
@@ -131,78 +136,90 @@ export default class PageHome extends Component {
                 }
                 <h1 className={styles.title}>Articles</h1>
                 <hr/>
-                <div className={styles.imgArticle}>
-                    <img src="http://www.jaflore.com/img/sdw/default.jpg"/>
+                <br/>
+                <div className={styles.rowArticle}>
+                    <div className={styles.imgArticle}>
+                        <img src="http://www.jaflore.com/img/sdw/default.jpg"/>
+                    </div>
+                    <div className={styles.textArticle}>
+                        <h2>Article 1</h2>
+                        <p>
+                            Ex his quidam aeternitati se commendari posse per statuas aestimantes eas ardenter adfectant quasi plus praemii de figmentis aereis sensu carentibus adepturi, quam ex conscientia honeste recteque factorum, easque auro curant inbracteari, quod Acilio Glabrioni delatum est primo
+                         </p>
+                    </div>
                 </div>
-                <div className={styles.textArticle}>
-                    <h2>Article 1</h2>
-                    <p>
-                        Ex his quidam aeternitati se commendari posse per statuas aestimantes eas ardenter adfectant quasi plus praemii de figmentis aereis sensu carentibus adepturi, quam ex conscientia honeste recteque factorum, easque auro curant inbracteari, quod Acilio Glabrioni delatum est primo
-                     </p>
+                <div className={styles.rowArticle}>
+                    <div className={styles.imgArticle}>
+                        <img src="http://www.jaflore.com/img/sdw/default.jpg"/>
+                    </div>
+                    <div className={styles.textArticle}>
+                        <h2>Article 2</h2>
+                        <p>
+                            Ex his quidam aeternitati se commendari posse per statuas aestimantes eas ardenter adfectant quasi plus praemii de figmentis aereis sensu carentibus adepturi, quam ex conscientia honeste recteque factorum, easque auro curant inbracteari, quod Acilio Glabrioni delatum est primo
+                         </p>
+                    </div>
+                </div><div className={styles.rowArticle}>
+                    <div className={styles.imgArticle}>
+                        <img src="http://www.jaflore.com/img/sdw/default.jpg"/>
+                    </div>
+                    <div className={styles.textArticle}>
+                        <h2>Article 3</h2>
+                        <p>
+                            Ex his quidam aeternitati se commendari posse per statuas aestimantes eas ardenter adfectant quasi plus praemii de figmentis aereis sensu carentibus adepturi, quam ex conscientia honeste recteque factorum, easque auro curant inbracteari, quod Acilio Glabrioni delatum est primo
+                         </p>
+                    </div>
+                </div><div className={styles.rowArticle}>
+                    <div className={styles.imgArticle}>
+                        <img src="http://www.jaflore.com/img/sdw/default.jpg"/>
+                    </div>
+                    <div className={styles.textArticle}>
+                        <h2>Article 4</h2>
+                        <p>
+                            Ex his quidam aeternitati se commendari posse per statuas aestimantes eas ardenter adfectant quasi plus praemii de figmentis aereis sensu carentibus adepturi, quam ex conscientia honeste recteque factorum, easque auro curant inbracteari, quod Acilio Glabrioni delatum est primo
+                         </p>
+                    </div>
+                </div><div className={styles.rowArticle}>
+                    <div className={styles.imgArticle}>
+                        <img src="http://www.jaflore.com/img/sdw/default.jpg"/>
+                    </div>
+                    <div className={styles.textArticle}>
+                        <h2>Article 5</h2>
+                        <p>
+                            Ex his quidam aeternitati se commendari posse per statuas aestimantes eas ardenter adfectant quasi plus praemii de figmentis aereis sensu carentibus adepturi, quam ex conscientia honeste recteque factorum, easque auro curant inbracteari, quod Acilio Glabrioni delatum est primo
+                         </p>
+                    </div>
+                </div><div className={styles.rowArticle}>
+                    <div className={styles.imgArticle}>
+                        <img src="http://www.jaflore.com/img/sdw/default.jpg"/>
+                    </div>
+                    <div className={styles.textArticle}>
+                        <h2>Article 6</h2>
+                        <p>
+                            Ex his quidam aeternitati se commendari posse per statuas aestimantes eas ardenter adfectant quasi plus praemii de figmentis aereis sensu carentibus adepturi, quam ex conscientia honeste recteque factorum, easque auro curant inbracteari, quod Acilio Glabrioni delatum est primo
+                         </p>
+                    </div>
+                </div><div className={styles.rowArticle}>
+                    <div className={styles.imgArticle}>
+                        <img src="http://www.jaflore.com/img/sdw/default.jpg"/>
+                    </div>
+                    <div className={styles.textArticle}>
+                        <h2>Article 7</h2>
+                        <p>
+                            Ex his quidam aeternitati se commendari posse per statuas aestimantes eas ardenter adfectant quasi plus praemii de figmentis aereis sensu carentibus adepturi, quam ex conscientia honeste recteque factorum, easque auro curant inbracteari, quod Acilio Glabrioni delatum est primo
+                         </p>
+                    </div>
+                </div><div className={styles.rowArticle}>
+                    <div className={styles.imgArticle}>
+                        <img src="http://www.jaflore.com/img/sdw/default.jpg"/>
+                    </div>
+                    <div className={styles.textArticle}>
+                        <h2>Article 8</h2>
+                        <p>
+                            Ex his quidam aeternitati se commendari posse per statuas aestimantes eas ardenter adfectant quasi plus praemii de figmentis aereis sensu carentibus adepturi, quam ex conscientia honeste recteque factorum, easque auro curant inbracteari, quod Acilio Glabrioni delatum est primo
+                         </p>
+                    </div>
                 </div>
-                <div className={styles.imgArticle}>
-                    <img src="http://www.jaflore.com/img/sdw/default.jpg"/>
-                </div>
-                <div className={styles.textArticle}>
-                    <h2>Article 2</h2>
-                    <p>
-                        Ex his quidam aeternitati se commendari posse per statuas aestimantes eas ardenter adfectant quasi plus praemii de figmentis aereis sensu carentibus adepturi, quam ex conscientia honeste recteque factorum, easque auro curant inbracteari, quod Acilio Glabrioni delatum est primo
-                     </p>
-                </div>
-                <div className={styles.imgArticle}>
-                    <img src="http://www.jaflore.com/img/sdw/default.jpg"/>
-                </div>
-                <div className={styles.textArticle}>
-                    <h2>Article 3</h2>
-                    <p>
-                        Ex his quidam aeternitati se commendari posse per statuas aestimantes eas ardenter adfectant quasi plus praemii de figmentis aereis sensu carentibus adepturi, quam ex conscientia honeste recteque factorum, easque auro curant inbracteari, quod Acilio Glabrioni delatum est primo
-                     </p>
-                </div>
-                <div className={styles.imgArticle}>
-                    <img src="http://www.jaflore.com/img/sdw/default.jpg"/>
-                </div>
-                <div className={styles.textArticle}>
-                    <h2>Article 4</h2>
-                    <p>
-                        Ex his quidam aeternitati se commendari posse per statuas aestimantes eas ardenter adfectant quasi plus praemii de figmentis aereis sensu carentibus adepturi, quam ex conscientia honeste recteque factorum, easque auro curant inbracteari, quod Acilio Glabrioni delatum est primo
-                     </p>
-                </div>
-                <div className={styles.imgArticle}>
-                    <img src="http://www.jaflore.com/img/sdw/default.jpg"/>
-                </div>
-                <div className={styles.textArticle}>
-                    <h2>Article 5</h2>
-                    <p>
-                        Ex his quidam aeternitati se commendari posse per statuas aestimantes eas ardenter adfectant quasi plus praemii de figmentis aereis sensu carentibus adepturi, quam ex conscientia honeste recteque factorum, easque auro curant inbracteari, quod Acilio Glabrioni delatum est primo
-                     </p>
-                </div>
-                <div className={styles.imgArticle}>
-                    <img src="http://www.jaflore.com/img/sdw/default.jpg"/>
-                </div>
-                <div className={styles.textArticle}>
-                    <h2>Article 6</h2>
-                    <p>
-                        Ex his quidam aeternitati se commendari posse per statuas aestimantes eas ardenter adfectant quasi plus praemii de figmentis aereis sensu carentibus adepturi, quam ex conscientia honeste recteque factorum, easque auro curant inbracteari, quod Acilio Glabrioni delatum est primo
-                     </p>
-                </div>
-                <div className={styles.imgArticle}>
-                    <img src="http://www.jaflore.com/img/sdw/default.jpg"/>
-                </div>
-                <div className={styles.textArticle}>
-                    <h2>Article 7</h2>
-                    <p>
-                        Ex his quidam aeternitati se commendari posse per statuas aestimantes eas ardenter adfectant quasi plus praemii de figmentis aereis sensu carentibus adepturi, quam ex conscientia honeste recteque factorum, easque auro curant inbracteari, quod Acilio Glabrioni delatum est primo
-                     </p>
-                </div>
-                <div className={styles.imgArticle}>
-                    <img src="http://www.jaflore.com/img/sdw/default.jpg"/>
-                </div>
-                <div className={styles.textArticle}>
-                    <h2>Article 8</h2>
-                    <p>
-                        Ex his quidam aeternitati se commendari posse per statuas aestimantes eas ardenter adfectant quasi plus praemii de figmentis aereis sensu carentibus adepturi, quam ex conscientia honeste recteque factorum, easque auro curant inbracteari, quod Acilio Glabrioni delatum est primo
-                     </p>
-                </div>
+
           </ul>
       </div>
     )

@@ -78,21 +78,26 @@ export default class PageTeam extends Component {
       <div>
       {
           team &&
-              <div>
+             <div>
                 <h1 className={styles.title}>
                     <img className={styles.logoTeam} width="100px" src={team.crestUrl}/>
                     {team.name}
                 </h1>
                 <div className={styles.resultats}>
+                <h3 className={styles.titleClassement}>Résultats</h3>
+                <hr/>
                 {
                     teamfixtures &&
                     teamfixtures.fixtures &&
                     teamfixtures.fixtures.map((fixture, index) => {
                         if(fixture.result.goalsHomeTeam!==null && fixture.result.goalsAwayTeam!==null){
+                            fixture.id = fixture._links.self.href.substr(41);
                             return <div key={index} className={styles.fixture} >
-                                        <div className={styles.homeTeams}>{fixture.homeTeamName}</div>
-                                        <div className={styles.scores}>{fixture.result.goalsHomeTeam} - {fixture.result.goalsAwayTeam}</div>
-                                        <div className={styles.awayTeams}> {fixture.awayTeamName}</div>
+                                        <Link to={"/fixtures/"+fixture.id}>
+                                            <div className={styles.homeTeams}>{fixture.homeTeamName}</div>
+                                            <div className={styles.scores}>{fixture.result.goalsHomeTeam} - {fixture.result.goalsAwayTeam}</div>
+                                            <div className={styles.awayTeams}> {fixture.awayTeamName}</div>
+                                        </Link>
                                     </div>
                         }
                     })
@@ -100,6 +105,7 @@ export default class PageTeam extends Component {
                 </div>
                 <div className={styles.listPlayers}>
                     <h3>Joueurs</h3>
+                    <hr/>
                     <ul>
                       {
                         players &&
@@ -108,18 +114,18 @@ export default class PageTeam extends Component {
                             var fullname = player.name;
                             var flocage = fullname.substr(fullname.indexOf(' ')+1);
                           return <li className={styles.player} key={index}>
-                                    <img className={styles.maillot} src="http://www.jaflore.com/img/sdw/maillot.jpg"/>
-                                    <span className={styles.flocage}>{flocage}</span>
-                                    <span className={styles.numero}>{player.jerseyNumber}</span>
                                     <h3>{player.name}</h3>
-                                    <hr/>
-                                    <button id={index}>Infos</button>
+                                    <div className={styles.left}>
+                                        <img className={styles.maillot} src="http://www.jaflore.com/img/sdw/maillot.jpg"/>
+                                        <span className={styles.flocage}>{flocage}</span>
+                                        <span className={styles.numero}>{player.jerseyNumber}</span>
+                                    </div>
                                     <div className={styles.infosPlayer}>
-                                        Position : {player.position}<br/>
-                                        Année de naissance : {player.dateOfBirth}<br/>
-                                        Nationalité : {player.nationality}<br/>
-                                        Fin du contrat : {player.contractUntil}<br/>
-                                        Valuer : {player.marketValue}<br/>
+                                        Position : {player.position}<br/><br/>
+                                        Année de naissance : {player.dateOfBirth}<br/><br/>
+                                        Nationalité : {player.nationality}<br/><br/>
+                                        Fin du contrat : {player.contractUntil}<br/><br/>
+                                        Valeur : {player.marketValue}<br/>
                                     </div>
 
                                 </li>
