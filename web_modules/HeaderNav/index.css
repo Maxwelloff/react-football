@@ -1,0 +1,13 @@
+.link {
+  text-decoration: none;
+}
+
+.activeLink {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.topBar{
+    background-color: #008091;
+    height: 35px;
+}

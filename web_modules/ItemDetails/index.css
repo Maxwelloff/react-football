@@ -1,0 +1,44 @@
+.itemDetails{
+  display: inline-block;
+  width: 400px;
+}
+
+.title {
+  display: block;
+}
+
+.image {
+  border-radius: 50px;
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+  float: left;
+}
+
+.kinds:after {
+  clear: both;
+}
+
+.list{
+  list-style-type: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.song {
+  clear: both;
+  border-top: solid 1px #000;
+  padding: 5px;
+  margin: 5px 0px 0px 5px;
+}
+
+@media (--small-viewport) {
+  .itemDetails{
+    background: #000;
+    color: #FFF;
+  }
+
+  .song {
+    border-top: solid 1px #FFF;
+  }
+}

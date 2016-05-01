@@ -1,0 +1,155 @@
+.title{
+    color: #565657;
+    margin-top: 2%;
+    text-align: center;
+    font-size: 1.5em;
+    clear: both;
+}
+
+hr{
+    width: 95%;
+    margin: 10px auto !important;
+    border: 1px solid #EFEFEF;
+}
+
+.championship{
+    list-style-type: none;
+    width:23%;
+    margin:1%;
+    float: left;
+    box-sizing: border-box;
+    text-align: center;
+    box-shadow: 6px 6px 10px #DFDFDF;
+    border: 1px solid #EFEFEF;
+    background-color: #F7F7F7;
+}
+
+.championship>a>figure>img{
+    width: 100%;
+}
+
+.championship>a>figure{
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+}
+.championship:active{
+    background-color: #EFEFEF;
+}
+
+.championship:hover{
+    cursor: pointer;
+    background-color: #EFEFEF;
+}
+
+.championship>a{
+    text-decoration: none;
+    color: #565657;
+}
+
+.championship>a>h2{
+    font-size: 1em;
+}
+
+.listChampionship{
+    width: 80%;
+    float: left;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+
+.live{
+    float: left;
+    width: 20%;
+    margin-top: 1.22%;
+    box-sizing: border-box;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.homeTeams,.awayTeams,.scores{
+    float: left;
+    width:33.33%;
+    height: 50px;
+    border-bottom: 1px solid #EFEFEF;
+    padding: 5px 0px;
+    /*word-wrap: break-word;*/
+}
+
+.scores{
+    line-height: 2;
+    font-weight: bold;
+}
+
+.fixture{
+
+}
+
+.championship figure {
+	position: relative;
+}
+.championship figure::before {
+	position: absolute;
+	top: 0;
+	left: -75%;
+	z-index: 2;
+	display: block;
+	content: '';
+	width: 50%;
+	height: 100%;
+	background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+	background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+	-webkit-transform: skewX(-25deg);
+	transform: skewX(-25deg);
+}
+.championship figure:hover::before {
+	-webkit-animation: shine .75s;
+	animation: shine .75s;
+}
+@-webkit-keyframes shine {
+	100% {
+		left: 125%;
+	}
+}
+@keyframes shine {
+	100% {
+		left: 125%;
+	}
+}
+
+.imgArticle{
+    float: left;
+    width: 25%;
+}
+
+.imgArticle>img{
+    width: 100%;
+}
+
+.textArticle{
+    float: left;
+    width: 75%;
+    padding: 10px;
+    box-sizing: border-box;
+    color: #565657;
+}
+
+@media(max-width:641px){
+    .championship{
+        width: 96%;
+        margin-top: 2%;
+    }
+    .listChampionship{
+        padding: 0 2%;
+    }
+    .listChampionship,.live{
+        width: 100%;
+    }
+}
+
+@media(min-width:641px){
+    .championship{
+        min-height: 170px;
+    }
+}

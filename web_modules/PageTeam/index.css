@@ -1,0 +1,70 @@
+.title{
+    color: #565657;
+    margin-top: 2%;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+hr{
+    width: 95%;
+    margin: 0 auto;
+    border: 1px solid #EFEFEF;
+}
+
+.logoTeam{
+    vertical-align: middle;
+    margin-right: 20px;
+}
+
+.player{
+    list-style-type: none;
+    float: left;
+    border:1px solid #EFEFEF;
+    margin: 1%;
+    padding:10px;
+    text-align: center;
+    box-sizing: border-box;
+    width: 14.5%;
+    box-shadow: 6px 6px 10px #DFDFDF;
+    border: 1px solid #EFEFEF;
+    min-height: 300px;
+}
+
+.infosPlayer{
+    text-align: left;
+    padding: 5px;
+    display: none;
+}
+
+.maillot{
+    width: 100%;
+}
+
+.flocage{
+    color: white;
+    margin-top:-83%;
+    float: left;
+    width: 100%;
+    position: relative;
+}
+
+.numero{
+    color: white;
+    margin-top:-60%;
+    font-size: 2em;
+    float: left;
+    width: 100%;
+    position: relative;
+}
+
+@media(max-width:641px){
+    .title{
+        font-size: 1em;
+    }
+    .logoTeam{
+        width: 15%;
+    }
+    .player{
+        width: 31.16%;
+    }
+}
